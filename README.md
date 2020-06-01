@@ -24,7 +24,9 @@ npm install -g @aws-amplify/cli
 ## Configuring AWS Amplify
 
 We need to configure our AWS Amplify CLI to work with our AWS Account:
-`amplify configure`
+```
+amplify configure
+````
 
 Login to your AWS Console and follow the instructions in the CLI.
 
