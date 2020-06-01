@@ -35,3 +35,20 @@ Login to your AWS Console and follow the instructions in the CLI.
 ![Alt text](/images/012-create-cli-user.PNG)
 ![Alt text](/images/013-create-cli-user.PNG)
 
+## Initializing our Project with Amplify
+
+```
+amplify init
+```
+![Alt text](/images/014-amplify-init.PNG)
+
+Amplify CLI will generate a CloudFormation template that will spin up an S3 bucket and all the necessary roles.
+
+## Connect our React Project with Amplify
+
+Next, we have to configure our React application so it knows it uses Amplify. Add the following lines of codes:
+```
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config)
+```
