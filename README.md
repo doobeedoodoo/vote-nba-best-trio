@@ -73,3 +73,9 @@ type Candidate @model {
   votes: Int!
 }
 ```
+After creating our schema, we can now push to our AWS environment using:
+```
+amplify push
+```
+![Alt text](/images/016-push-api.PNG)
+
