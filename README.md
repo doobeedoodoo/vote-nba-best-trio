@@ -159,3 +159,15 @@ Next, we configure our build settings:
 
 ![Alt text](/images/024-amplify-deploy-build-settings.PNG)
 
+Finally, click on "Save and Deploy" a.k.a. Fire away!
+
+![Alt text](/images/025-amplify-deploy-save.PNG)
+
+AWS Amplify will now build and deploy our project.
+
+![Alt text](/images/026-amplify-deploy.PNG)
+
+After the build has finished, visit the link to visit our web application. :)
+
+![Alt text](/images/027.PNG)
+
