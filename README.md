@@ -28,5 +28,5 @@ We need to configure our AWS Amplify CLI to work with our AWS Account:
 
 Login to your AWS Console and follow the instructions in the CLI.
 
-![Alt text](/images/010-create-cli-user.png)
+![Alt text](/images/010-create-cli-user.PNG)
 
