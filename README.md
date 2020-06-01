@@ -115,3 +115,10 @@ mutation createCandidates {
 }
 ```
 
+Go to Data Sources, and you can see that Amplify has created a table for us:
+
+![Alt text](/images/019-data-sources.PNG)
+
+Go to the table and we can see the items there:
+
+![Alt text](/images/020-dynamodb.PNG)
