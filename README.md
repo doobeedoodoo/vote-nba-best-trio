@@ -1,4 +1,4 @@
-# vote-nba-best-trio
+# Vote For Your Favorite NBA Trio
 This application lets users vote for their NBA best trio. This is implemented using React JS, GraphQL and DynamoDB and is deployed using AWS Amplify.
 
 ## Setting Up Your Environment
