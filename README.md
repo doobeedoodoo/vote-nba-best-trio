@@ -125,6 +125,12 @@ Go to the table and we can see the items there:
 
 ## Creating Our Frontend and Connecting It With Our Backend
 
+In order to use Bootstrap in our application, let's install it first:
+
+```
+npm install react-bootstrap bootstrap
+```
+
 Let's modify our App.js file:
 
 ```
