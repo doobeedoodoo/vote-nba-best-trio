@@ -155,3 +155,7 @@ We authorize AWS to access our GitHub account and choose the correct repository 
 
 ![Alt text](/images/023-amplify-deploy-3.PNG)
 
+Next, we configure our build settings:
+
+![Alt text](/images/024-amplify-deploy-build-settings.PNG)
+
