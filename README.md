@@ -136,6 +136,12 @@ import { listCandidates as ListCandidates } from './graphql/queries'
 import { updateCandidate as UpdateCandidate } from './graphql/mutations'
 ```
 
+Let's add some charts! We'll be using charts.js, so let's install that:
+
+```
+npm install --save react-chartjs-2 chart.js
+```
+
 To test locally, run:
 ```
 npm start
