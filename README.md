@@ -52,3 +52,24 @@ import Amplify from 'aws-amplify'
 import config from './aws-exports'
 Amplify.configure(config)
 ```
+
+## Creating our Backend - Let's Start Creating APIs!
+
+We'll use GraphQL for our APIs. To know more about GraphQL, check: https://graphql.org/
+
+Let's create our first API:
+```
+amplify add api
+```
+![Alt text](/images/015-add-api.PNG)
+
+Update the schema according to our needs:
+
+```
+type Candidate @model {
+  id: ID!
+  name: String!
+  description: String
+  votes: Int!
+}
+```
