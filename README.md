@@ -253,3 +253,43 @@ input UpdateCandidateInput {
 Go to Queries and run let's try running a query that will list all candidates:
 
 ![Alt text](/images/018-list-query.PNG)
+
+## Populating our Database
+
+Amplify automatically provisioned a DyanamoDB for us (cool!). To populate it, let's run the following query in AppSync:
+
+```
+mutation createCandidates {
+  candidate1: createCandidate(input: {name: "Jordan Pippen Rodman", votes: 0, description: "Chicago Bulls"}) {
+    id
+    votes
+    name
+    description
+  }
+  candidate2: createCandidate(input: {name: "Duncan Ginobili Parker", votes: 0, description: "San Antonio Spurs"}) {
+    id
+    votes
+    name
+    description
+  }
+  candidate3: createCandidate(input: {name: "James Wade Bosh", votes: 0, description: "Miami Heat"}) {
+    id
+    votes
+    name
+    description
+  }
+  candidate4: createCandidate(input: {name: "Bryant O'Neal Horry", votes: 0, description: "Los Angeles Lakers"}) {
+    id
+    votes
+    name
+    description
+  }
+  candidate5: createCandidate(input: {name: "Curry Thompson Green", votes: 0, description: "Golden State Warriors"}) {
+    id
+    votes
+    name
+    description
+  }
+}
+```
+
