@@ -6,6 +6,7 @@ This application lets users vote for their NBA best trio. This is implemented us
 If you have not done it yet, install the NPM installer:
 
 * npm (https://nodejs.org/en/download/)
+* Create an AWS account (https://aws.amazon.com/resources/create-account/)
 
 ## Creating the React Application
 ```
@@ -15,8 +16,17 @@ cd vote-nba-best-trio
 ## Installing AWS Amplify
 
 Since we are going to use AWS Amplify to manage and deploy our application, let's install it:
-
 ```
 npm install aws-amplify aws-amplify-react
+npm install -g @aws-amplify/cli
 ```
+
+## Configuring AWS Amplify
+
+We need to configure our AWS Amplify CLI to work with our AWS Account:
+`amplify configure`
+
+Login to your AWS Console and follow the instructions in the CLI.
+
+![Alt text](/images/010-create-cli-user.png)
 
