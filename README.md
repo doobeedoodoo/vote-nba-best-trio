@@ -35,7 +35,7 @@ cd vote-nba-best-trio
 ## Installing AWS Amplify
 
 Since we are going to use AWS Amplify to manage and deploy our application, let's install it:
-```
+```bash
 npm install aws-amplify aws-amplify-react
 npm install -g @aws-amplify/cli
 ```
@@ -43,7 +43,7 @@ npm install -g @aws-amplify/cli
 ## Configuring AWS Amplify
 
 We need to configure our AWS Amplify CLI to work with our AWS Account:
-```
+```bash
 amplify configure
 ````
 
@@ -56,7 +56,7 @@ Login to your AWS Console and follow the instructions in the CLI.
 
 ## Initializing our Project with Amplify
 
-```
+```bash
 amplify init
 ```
 ![Alt text](/images/014-amplify-init.PNG)
@@ -66,7 +66,7 @@ Amplify CLI will generate a CloudFormation template that will spin up an S3 buck
 ## Connect our React Project with Amplify
 
 Next, we have to configure our React application so it knows it uses Amplify. Add the following lines of codes:
-```
+```js
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
 Amplify.configure(config)
@@ -77,14 +77,14 @@ Amplify.configure(config)
 We'll use GraphQL for our APIs. To know more about GraphQL, check: https://graphql.org/
 
 Let's create our first API:
-```
+```bash
 amplify add api
 ```
 ![Alt text](/images/015-add-api.PNG)
 
 Update the schema according to our needs:
 
-```
+```graphql
 type Candidate @model {
   id: ID!
   name: String!
@@ -93,7 +93,7 @@ type Candidate @model {
 }
 ```
 After creating our schema, we can now push to our AWS environment using:
-```
+```bash
 amplify push
 ```
 ![Alt text](/images/016-push-api.PNG)
@@ -114,7 +114,7 @@ Now, go to Queries and run let's try running a query that will list all candidat
 
 Amplify automatically provisioned a DyanamoDB for us (cool!). To populate it, let's run the following query in AppSync:
 
-```
+```graphql
 mutation createCandidates {
   candidate1: createCandidate(input: {name: "Jordan Pippen Rodman", votes: 0, description: "Chicago Bulls"}) {
     id votes name description
@@ -146,7 +146,7 @@ Go to the table and we can see the items there:
 
 Let's use React Bootstrap to generate our frontend components:
 
-```
+```bash
 npm install react-bootstrap bootstrap
 ```
 Here's a snippet from App.js that calls our backend API from our frontend:
@@ -157,6 +157,15 @@ import { updateCandidate as UpdateCandidate } from './graphql/mutations'
 import { onUpdateCandidate } from './graphql/subscriptions'
 
 class App extends React.Component {
+...
+  constructor(props) {
+    super(props);
+    this.state = {
+      candidates: [],
+      chartData: {},
+      subscription: {}
+    }
+  }
 ...
   async componentDidMount() {
     try {
@@ -174,7 +183,7 @@ class App extends React.Component {
         const updatedCandidates = this.state.candidates
         ...
         const updatedChartData = this.state.chartData
-        var chartIndex = updatedChartData.data[0].dataPoints.findIndex(x => x.label === candidate.name)
+        ...
         updatedChartData.data[0].dataPoints[chartIndex].y = candidate.votes
         ...
         this.setState({
@@ -183,21 +192,16 @@ class App extends React.Component {
         })
       }
     })
-
     this.generateChart()
   }
   
   async updateVote(candidate) {
     ...
-    this.state.candidates[candidateIndex].votes = currentVotes + 1
-    ...
-    updatedChartData.data[0].dataPoints[chartIndex].y = currentVotes
-    ...
     this.setState({
       candidates: this.state.candidates,
       chartData: updatedChartData
     })
-
+    ...
     try {
       await API.graphql(graphqlOperation(UpdateCandidate, {
         input: {
@@ -208,15 +212,9 @@ class App extends React.Component {
       ...
     }
   }
-  
+  ...
     render() {
-
-    const styles = {
-      divStyle: {
-        width: "600px"
-      }
-    }
-
+    ...
     return (
       <>
         </* JSX code goes here */
@@ -230,7 +228,7 @@ export default App
 App.js is the heart and soul of our frontend app. Check out the whole file in this repo.
 
 To test locally, run:
-```
+```bash
 npm start
 ```
 
@@ -267,7 +265,7 @@ After the build has finished, visit the link to visit our web application. :)
 ## Ramping Down Our Deployment
 
 To remove our provisioned resources, just execute:
-```
+```bash
 amplify delete
 ```
 
