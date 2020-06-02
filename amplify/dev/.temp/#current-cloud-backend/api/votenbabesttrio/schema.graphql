@@ -1,7 +1,0 @@
-type Candidate @model {
-  id: ID!
-  name: String!
-  description: String
-  votes: Int!
-  image: String
-}

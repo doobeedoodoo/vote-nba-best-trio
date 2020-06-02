@@ -24,7 +24,6 @@ class App extends React.Component {
     this.state = {
       candidates: [],
       chartData: {},
-      hasVoted: false,
       subscription: {}
     }
   }
@@ -101,7 +100,6 @@ class App extends React.Component {
 
     this.setState({
       candidates: this.state.candidates,
-      hasVoted: true,
       chartData: updatedChartData
     })
 
@@ -128,10 +126,7 @@ class App extends React.Component {
 
     return (
       <>
-
-
         <Container fluid="sm">
-
           <Row>
             <h1>Vote For Your Favorite NBA Trio!</h1>
             <CardDeck>
@@ -139,38 +134,28 @@ class App extends React.Component {
                 this.state.candidates.map((candidate, index) => (
                   <Card style={{ width: '18rem' }} key={index}>
                     {<Card.Img variant="top" src={candidate.image}></Card.Img>}
-                    {console.log('image: ', candidate.image)}
                     <Card.Body>
                       <Card.Title>{candidate.name}</Card.Title>
                       <Card.Text>{candidate.description}</Card.Text>
-                      {!this.state.hasVoted &&
-                        <Button variant="primary" onClick={(e) => this.handleClick(candidate, e)}>VOTE</Button>
-                      }
-                      {!this.state.hasVoted ||
-                        <Card.Text>Votes: <b>{candidate.votes}</b></Card.Text>
-                      }
+                      <Button variant="primary" onClick={(e) => this.handleClick(candidate, e)}>VOTE</Button>
+                      <Card.Text>Votes: <b>{candidate.votes}</b></Card.Text>
                     </Card.Body>
                   </Card>
                 ))
               }
             </CardDeck>
-
           </Row>
 
           <br />
           <br />
 
-          {!this.state.hasVoted ||
-            <div style={styles.divStyle}>
-              <CanvasJSChart options={this.state.chartData}
-              /* onRef = {ref => this.chart = ref} */
-              />
-            </div>
-          }
-
+          <div style={styles.divStyle}>
+            <CanvasJSChart options={this.state.chartData}
+            /* onRef = {ref => this.chart = ref} */
+            />
+          </div>
 
         </Container>
-
       </>
     )
   }
