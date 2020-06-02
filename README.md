@@ -150,7 +150,7 @@ Let's use React Bootstrap to generate our frontend components:
 npm install react-bootstrap bootstrap
 ```
 Here's a snippet from App.js that calls our backend API from our frontend:
-```
+```js
 import { API, graphqlOperation } from 'aws-amplify'
 import { listCandidates as ListCandidates } from './graphql/queries'
 import { updateCandidate as UpdateCandidate } from './graphql/mutations'
