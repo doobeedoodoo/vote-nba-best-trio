@@ -262,10 +262,6 @@ AWS Amplify will now build and deploy our project.
 
 After the build has finished, visit the link to visit our web application. :)
 
-![Alt text](/images/027.PNG)
-
-Screenshot:
-
 ![Alt text](/images/000-product.PNG)
 
 ## Ramping Down Our Deployment
@@ -274,3 +270,7 @@ To remove our provisioned resources, just execute:
 ```
 amplify delete
 ```
+
+## Questions?
+
+Let's keep in touch!
