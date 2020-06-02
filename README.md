@@ -28,7 +28,7 @@ If you have not done it yet, install the NPM installer:
 * Create an AWS account (https://aws.amazon.com/resources/create-account/)
 
 ## Creating the React Application
-```
+```bash
 npx create-react-app vote-nba-best-trio
 cd vote-nba-best-trio
 ```
