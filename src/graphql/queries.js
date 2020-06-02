@@ -8,6 +8,7 @@ export const getCandidate = /* GraphQL */ `
       name
       description
       votes
+      image
       createdAt
       updatedAt
     }
@@ -25,6 +26,7 @@ export const listCandidates = /* GraphQL */ `
         name
         description
         votes
+        image
         createdAt
         updatedAt
       }

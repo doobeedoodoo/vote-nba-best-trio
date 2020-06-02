@@ -8,6 +8,7 @@ export const onCreateCandidate = /* GraphQL */ `
       name
       description
       votes
+      image
       createdAt
       updatedAt
     }
@@ -20,6 +21,7 @@ export const onUpdateCandidate = /* GraphQL */ `
       name
       description
       votes
+      image
       createdAt
       updatedAt
     }
@@ -32,6 +34,7 @@ export const onDeleteCandidate = /* GraphQL */ `
       name
       description
       votes
+      image
       createdAt
       updatedAt
     }

@@ -11,6 +11,7 @@ export const createCandidate = /* GraphQL */ `
       name
       description
       votes
+      image
       createdAt
       updatedAt
     }
@@ -26,6 +27,7 @@ export const updateCandidate = /* GraphQL */ `
       name
       description
       votes
+      image
       createdAt
       updatedAt
     }
@@ -41,6 +43,7 @@ export const deleteCandidate = /* GraphQL */ `
       name
       description
       votes
+      image
       createdAt
       updatedAt
     }
