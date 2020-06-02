@@ -138,6 +138,7 @@ class App extends React.Component {
                       <Card.Title>{candidate.name}</Card.Title>
                       <Card.Text>{candidate.description}</Card.Text>
                       <Button variant="primary" onClick={(e) => this.handleClick(candidate, e)}>VOTE</Button>
+                      <br/><br/>
                       <Card.Text>Votes: <b>{candidate.votes}</b></Card.Text>
                     </Card.Body>
                   </Card>
